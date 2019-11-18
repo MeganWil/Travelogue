@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D508D5C0238270F3006AF384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508D5BF238270F3006AF384 /* AppDelegate.swift */; };
 		D508D5C2238270F3006AF384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508D5C1238270F3006AF384 /* SceneDelegate.swift */; };
-		D508D5C4238270F3006AF384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508D5C3238270F3006AF384 /* ViewController.swift */; };
 		D508D5C7238270F3006AF384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D508D5C5238270F3006AF384 /* Main.storyboard */; };
 		D508D5CA238270F3006AF384 /* Travelogue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D508D5C8238270F3006AF384 /* Travelogue.xcdatamodeld */; };
 		D508D5CC238270F5006AF384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D508D5CB238270F5006AF384 /* Assets.xcassets */; };
@@ -18,13 +17,15 @@
 		D508D5E3238277D9006AF384 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508D5DF238277D9006AF384 /* Trip+CoreDataProperties.swift */; };
 		D508D5E4238277D9006AF384 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508D5E0238277D9006AF384 /* Entry+CoreDataClass.swift */; };
 		D508D5E5238277D9006AF384 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508D5E1238277D9006AF384 /* Entry+CoreDataProperties.swift */; };
+		D508D5E7238278D0006AF384 /* TripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508D5E6238278D0006AF384 /* TripTableViewController.swift */; };
+		D508D5E9238278F3006AF384 /* EntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508D5E8238278F3006AF384 /* EntryTableViewController.swift */; };
+		D508D5EB2382792A006AF384 /* SingleEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508D5EA2382792A006AF384 /* SingleEntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D508D5BC238270F3006AF384 /* Travelogue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travelogue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D508D5BF238270F3006AF384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D508D5C1238270F3006AF384 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D508D5C3238270F3006AF384 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D508D5C6238270F3006AF384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D508D5C9238270F3006AF384 /* Travelogue.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Travelogue.xcdatamodel; sourceTree = "<group>"; };
 		D508D5CB238270F5006AF384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,6 +35,9 @@
 		D508D5DF238277D9006AF384 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D508D5E0238277D9006AF384 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D508D5E1238277D9006AF384 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D508D5E6238278D0006AF384 /* TripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewController.swift; sourceTree = "<group>"; };
+		D508D5E8238278F3006AF384 /* EntryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewController.swift; sourceTree = "<group>"; };
+		D508D5EA2382792A006AF384 /* SingleEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +76,10 @@
 				D508D5E1238277D9006AF384 /* Entry+CoreDataProperties.swift */,
 				D508D5BF238270F3006AF384 /* AppDelegate.swift */,
 				D508D5C1238270F3006AF384 /* SceneDelegate.swift */,
-				D508D5C3238270F3006AF384 /* ViewController.swift */,
 				D508D5C5238270F3006AF384 /* Main.storyboard */,
+				D508D5E6238278D0006AF384 /* TripTableViewController.swift */,
+				D508D5E8238278F3006AF384 /* EntryTableViewController.swift */,
+				D508D5EA2382792A006AF384 /* SingleEntryViewController.swift */,
 				D508D5C8238270F3006AF384 /* Travelogue.xcdatamodeld */,
 				D508D5CB238270F5006AF384 /* Assets.xcassets */,
 				D508D5CD238270F5006AF384 /* LaunchScreen.storyboard */,
@@ -154,12 +160,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D508D5E3238277D9006AF384 /* Trip+CoreDataProperties.swift in Sources */,
-				D508D5C4238270F3006AF384 /* ViewController.swift in Sources */,
 				D508D5E4238277D9006AF384 /* Entry+CoreDataClass.swift in Sources */,
 				D508D5CA238270F3006AF384 /* Travelogue.xcdatamodeld in Sources */,
 				D508D5C0238270F3006AF384 /* AppDelegate.swift in Sources */,
 				D508D5C2238270F3006AF384 /* SceneDelegate.swift in Sources */,
 				D508D5E5238277D9006AF384 /* Entry+CoreDataProperties.swift in Sources */,
+				D508D5E7238278D0006AF384 /* TripTableViewController.swift in Sources */,
+				D508D5EB2382792A006AF384 /* SingleEntryViewController.swift in Sources */,
+				D508D5E9238278F3006AF384 /* EntryTableViewController.swift in Sources */,
 				D508D5E2238277D9006AF384 /* Trip+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
