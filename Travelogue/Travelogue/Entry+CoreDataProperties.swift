@@ -16,11 +16,9 @@ extension Entry {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Entry> {
         return NSFetchRequest<Entry>(entityName: "Entry")
     }
-
     @NSManaged public var entryTitle: String?
-    @NSManaged public var picture: Data?
-    @NSManaged public var rawDate: Date?
+    @NSManaged public var picture: NSData?
+    @NSManaged public var rawDate: NSDate?
     @NSManaged public var text: String?
     @NSManaged public var trip: Trip?
-
 }

@@ -14,7 +14,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jqp-0l-ann">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.53199762105941772" green="0.76706546545028687" blue="0.91258805990219116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tripCell" id="g95-1f-NKL">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -23,6 +23,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.53199762105941772" green="0.76706546545028687" blue="0.91258805990219116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="MIn-fq-tuz" kind="show" id="wf8-5n-eLn"/>
                                 </connections>
@@ -56,7 +57,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IM7-uG-hQm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.53199762105941772" green="0.76706546545028687" blue="0.91258805990219116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="entryCell" id="nRt-dk-c7S">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -64,7 +65,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nRt-dk-c7S" id="hZv-f3-3SO">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.53199762105941772" green="0.76706546545028687" blue="0.91258805990219116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.53199762105941772" green="0.76706546545028687" blue="0.91258805990219116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="aBY-vY-I6l" kind="show" identifier="entrySeg" id="whW-MW-9gr"/>
                                 </connections>
@@ -76,10 +79,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Entries" id="Qbu-rG-OHt">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6qV-je-RIG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6qV-je-RIG">
+                            <connections>
+                                <action selector="addEntryButton:" destination="MIn-fq-tuz" id="td7-PE-MlT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addEntry" destination="6qV-je-RIG" id="3M2-yx-Jx5"/>
                         <outlet property="entryTableView" destination="IM7-uG-hQm" id="VhD-KL-ug6"/>
+                        <segue destination="aBY-vY-I6l" kind="show" identifier="newEntrySeg" id="CPk-LA-CQ0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="taw-H5-CXg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -97,7 +106,21 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txZ-Zv-0tG">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Item" id="TOl-0p-9M7"/>
+                                    <barButtonItem systemItem="camera" id="TOl-0p-9M7">
+                                        <connections>
+                                            <action selector="photoTaken:" destination="aBY-vY-I6l" id="yZi-e0-F4g"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="organize" id="nrF-t0-X76">
+                                        <connections>
+                                            <action selector="composePhotos:" destination="aBY-vY-I6l" id="BAc-nA-k7E"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="save" id="rqn-fe-0xp">
+                                        <connections>
+                                            <action selector="saveInfo:" destination="aBY-vY-I6l" id="8G8-iK-c9G"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W3J-g9-f8A">
@@ -105,15 +128,22 @@
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ip5-Qw-vDo">
                                 <rect key="frame" x="66" y="106" width="328" height="34"/>
+                                <color key="backgroundColor" red="0.53199762105941772" green="0.76706546545028687" blue="0.91258805990219116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="aBY-vY-I6l" id="8fO-bg-FQa"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bge-M2-WKe">
                                 <rect key="frame" x="20" y="181" width="374" height="197"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.53199762105941772" green="0.76706546545028687" blue="0.91258805990219116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="aBY-vY-I6l" id="yaw-0E-Q2u"/>
+                                </connections>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJ6-9S-Zqf">
                                 <rect key="frame" x="20" y="106" width="38" height="34"/>
@@ -128,7 +158,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.53199762105941772" green="0.76706546545028687" blue="0.91258805990219116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WuI-Zw-weM" firstAttribute="trailing" secondItem="ip5-Qw-vDo" secondAttribute="trailing" constant="20" id="1ps-LA-CqZ"/>
                             <constraint firstItem="WuI-Zw-weM" firstAttribute="trailing" secondItem="7bh-XJ-JNI" secondAttribute="trailing" constant="20" id="5Ps-vl-3Lf"/>
@@ -155,6 +185,12 @@
                         <viewLayoutGuide key="safeArea" id="WuI-Zw-weM"/>
                     </view>
                     <navigationItem key="navigationItem" id="uvI-qz-kcf"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="7bh-XJ-JNI" id="VH2-3l-vyn"/>
+                        <outlet property="imageView" destination="W3J-g9-f8A" id="pDM-pV-kce"/>
+                        <outlet property="infoTextView" destination="bge-M2-WKe" id="tMD-6R-v0i"/>
+                        <outlet property="titleTF" destination="ip5-Qw-vDo" id="IeL-qH-WWm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OvL-za-lsU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,4 +213,7 @@
             <point key="canvasLocation" x="-570" y="-153"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="CPk-LA-CQ0"/>
+    </inferredMetricsTieBreakers>
 </document>

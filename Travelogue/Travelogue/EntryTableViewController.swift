@@ -11,83 +11,73 @@ import CoreData
 
 
 class EntryTableViewController: UITableViewController {
+    
+    var trip : Trip?
+    var entries : [Entry]?
+    var dateFormatter = DateFormatter()
+    
     @IBOutlet var entryTableView: UITableView!
+    @IBOutlet weak var addEntry: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        dateFormatter.timeStyle = .long
+        dateFormatter.dateStyle = .long
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func viewWillAppear(_ animated: Bool) {
+        entryTableView.reloadData()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
+       return trip?.entries?.count ?? 0
+   }
+   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+       let cell = entryTableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
+    
+       if let entry = trip?.entries?[indexPath.row]{
+           cell.textLabel?.text = entry.entryTitle
+       }
         return cell
+   }
+        
+    @IBAction func addEntryButton(_ sender: Any) {
+        performSegue(withIdentifier: "newEntrySeg", sender: self)
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let location = segue.destination as? SingleEntryViewController
+            else {
+                print("Returning early")
+                return
+        }
+        
+        if let selectedRow = self.entryTableView.indexPathForSelectedRow?.row {
+            location.entry = trip?.entries?[selectedRow]
+        }
+            location.trip = trip
     }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            deleteEntry(at: indexPath)
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    func deleteEntry(at indexPath: IndexPath){
+        guard let entry = trip?.entries?[indexPath.row], let managedContent = entry.managedObjectContext
+            else {
+                return
+            }
+                managedContent.delete(entry)
+            do {
+                try managedContent.save()
+                    entryTableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            catch {
+                print("Entry could not be deleted")
+                entryTableView.reloadRows(at: [indexPath], with: .automatic)
+            }
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
